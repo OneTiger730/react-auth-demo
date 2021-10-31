@@ -9,7 +9,7 @@ const jwtBase = require('jsonwebtoken')
 
 // Set default middlewares
 server.use(middlewares)
-
+  
 // Route to issue JWT when a user logs in with basic authentication
 server.get('/user_token', (req, res) => {
   const user = auth(req)
