@@ -37,7 +37,6 @@ server.use(jwt({ secret: secret })
           '/user_token'
         ]
       }))
-
 // To handle POST, PUT and PATCH you need to use a body-parser
 // You can use the one used by JSON Server
 server.use(jsonServer.bodyParser)
@@ -54,7 +53,6 @@ server.use((req, res, next) => {
   if (userHasPermission) next()
   else res.status(403).json({error: 'No permission'})
 })
-
 // Use default router
 server.use(router)
 server.listen(3001, () => console.log('JSON Server is running'))
